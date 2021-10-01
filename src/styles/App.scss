@@ -1,0 +1,22 @@
+.characterList {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+img {
+	width: 100px;
+	height: 100px;
+}
+article {
+	margin: 10px;
+	border: solid black 2px;
+}
+.header {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	flex-wrap: wrap;
+}
+.header_img {
+	width: 300px;
+	height: 100px;
+}
