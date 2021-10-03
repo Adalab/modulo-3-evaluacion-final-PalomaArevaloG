@@ -1,12 +1,15 @@
 // Fichero src/components/App.js
 
+import { useEffect, useState } from 'react';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import '../styles/reset.scss';
 import '../styles/App.scss';
-import { useEffect, useState } from 'react';
-import logo from '../images/RickMortyLogo.png';
-import CharacterList from './CharacterList';
-import FilterByName from './FilterByName';
 import api from '../services/callToApi';
+import logo from '../images/RickMortyLogo.png';
+import FilterByName from './FilterByName';
+import CharacterList from './CharacterList';
+import CharacterDetail from './CharacterDetail';
+
 const App = () => {
 	const [data, setData] = useState([]);
 	const [searchName, setSearchName] = useState('');
@@ -27,7 +30,11 @@ const App = () => {
 			.toLocaleLowerCase()
 			.includes(searchName.toLocaleLowerCase())
 	);
-
+	const routeData = useRouteMatch('/character/:id');
+	const characterId = routeData !== null ? routeData.params.id : '';
+	const selectedCharacter = data.find(
+		(character) => character.id === parseInt(characterId)
+	);
 	return (
 		<>
 			<header className="header">
@@ -38,13 +45,23 @@ const App = () => {
 					alt="Rick y Morty"
 				/>
 			</header>
-			<FilterByName
-				searchName={searchName}
-				handleSearchName={handleSearchName}
-			/>
-			<main>
-				<CharacterList data={filteredData} />
-			</main>
+			<Switch>
+				<Route exact path="/">
+					<main>
+						<FilterByName
+							searchName={searchName}
+							handleSearchName={handleSearchName}
+						/>
+						<CharacterList data={filteredData} />
+					</main>
+				</Route>
+				<Route path="/character/:id">
+					<CharacterDetail character={selectedCharacter} />
+				</Route>
+				<Route>
+					<section>"El personaje que buscas no existe".</section>
+				</Route>
+			</Switch>
 		</>
 	);
 };

@@ -1,6 +1,9 @@
 const FilterByName = (props) => {
+	const handleFormSubmit = (ev) => {
+		ev.preventDefault();
+	};
 	return (
-		<form>
+		<form onSubmit={handleFormSubmit}>
 			Buscador de personajes:
 			<input
 				type="text"

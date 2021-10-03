@@ -1,8 +1,10 @@
-const callToApi = () => {
-	return fetch(`https://rickandmortyapi.com/api/character`)
+const callToApi = (searchName) => {
+	return fetch(
+		`https://rickandmortyapi.com/api/character/?name=${searchName}`
+	)
 		.then((response) => response.json())
 		.then((json) => {
-			return json.results.map((character) => {
+			const character = json.results.map((character) => {
 				return {
 					id: character.id,
 					name: character.name,
@@ -13,6 +15,7 @@ const callToApi = () => {
 					status: character.status,
 				};
 			});
+			return character;
 		});
 };
 
