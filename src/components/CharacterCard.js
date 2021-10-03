@@ -1,4 +1,5 @@
 const CharacterCard = (props) => {
+	console.log('charactercard', props);
 	return (
 		<article>
 			<img

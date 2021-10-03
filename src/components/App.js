@@ -8,12 +8,25 @@ import CharacterList from './CharacterList';
 import api from '../services/callToApi';
 const App = () => {
 	const [data, setData] = useState([]);
+	const [searchName, setSearchName] = useState('');
+
 	useEffect(() => {
+		//pinto listado
 		api().then((initialData) => {
 			console.log(initialData);
 			setData(initialData);
 		});
 	}, []);
+	//filtro por nombre
+	const handleSearchName = (ev) => {
+		setSearchName(ev.currentTarget.value);
+	};
+	const filteredData = data.filter((character) =>
+		character.name
+			.toLocaleLowerCase()
+			.includes(searchName.toLocaleLowerCase())
+	);
+
 	return (
 		<>
 			<header className="header">
@@ -25,11 +38,18 @@ const App = () => {
 				/>
 				<form>
 					Buscador de personajes:
-					<input type="text" />
+					<input
+						type="text"
+						name="name"
+						id="name"
+						placeholder="Introduce el nombre de un personaje"
+						value={searchName}
+						onChange={handleSearchName}
+					/>
 				</form>
 			</header>
 			<main>
-				<CharacterList data={data} />
+				<CharacterList data={filteredData} />
 			</main>
 		</>
 	);

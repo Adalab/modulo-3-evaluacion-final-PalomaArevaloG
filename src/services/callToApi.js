@@ -1,5 +1,5 @@
 function callToApi() {
-	return fetch('https://rickandmortyapi.com/api/character')
+	return fetch(`https://rickandmortyapi.com/api/character`)
 		.then((response) => response.json())
 		.then((json) => {
 			return json.results.map((character) => {
@@ -8,6 +8,9 @@ function callToApi() {
 					name: character.name,
 					image: character.image,
 					specie: character.species,
+					planet: character.origin.name,
+					episodes: character.episode.length,
+					status: character.status,
 				};
 			});
 		});
