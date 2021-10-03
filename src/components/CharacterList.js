@@ -10,7 +10,7 @@ const CharacterList = (props) => {
 	return (
 		<>
 			<ul className="characterList">{html}</ul>
-			{/* <p>{`No hay ningún personaje que coincida con la palabra XXX</p> */}
+			{/* <p>{`No hay ningún personaje que coincida con la palabra ${props.searchName}`}</p> */}
 		</>
 	);
 };

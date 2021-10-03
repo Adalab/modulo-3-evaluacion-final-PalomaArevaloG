@@ -5,6 +5,7 @@ import '../styles/App.scss';
 import { useEffect, useState } from 'react';
 import logo from '../images/RickMortyLogo.png';
 import CharacterList from './CharacterList';
+import FilterByName from './FilterByName';
 import api from '../services/callToApi';
 const App = () => {
 	const [data, setData] = useState([]);
@@ -12,11 +13,11 @@ const App = () => {
 
 	useEffect(() => {
 		//pinto listado
-		api().then((initialData) => {
+		api(searchName).then((initialData) => {
 			console.log(initialData);
 			setData(initialData);
 		});
-	}, []);
+	}, [searchName]);
 	//filtro por nombre
 	const handleSearchName = (ev) => {
 		setSearchName(ev.currentTarget.value);
@@ -36,18 +37,11 @@ const App = () => {
 					title="Rick y Morty"
 					alt="Rick y Morty"
 				/>
-				<form>
-					Buscador de personajes:
-					<input
-						type="text"
-						name="name"
-						id="name"
-						placeholder="Introduce el nombre de un personaje"
-						value={searchName}
-						onChange={handleSearchName}
-					/>
-				</form>
 			</header>
+			<FilterByName
+				searchName={searchName}
+				handleSearchName={handleSearchName}
+			/>
 			<main>
 				<CharacterList data={filteredData} />
 			</main>
