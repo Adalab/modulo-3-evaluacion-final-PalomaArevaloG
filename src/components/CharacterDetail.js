@@ -8,12 +8,8 @@ const CharacterDetail = (props) => {
 	// console.log('detail', props);
 	if (props.character !== undefined) {
 		return (
-			<>
-				<Link to="/">
-					<p>Volver atrás</p>
-				</Link>
-
-				<ul className="characterDetail">
+			<section className="characterDetail">
+				<ul className="listDetail">
 					<li>
 						<img
 							className="img__detail"
@@ -46,8 +42,13 @@ const CharacterDetail = (props) => {
 							/>
 						)}
 					</li>
+					<li>
+						<Link to="/">
+							<button className="btn__back">Volver atrás</button>
+						</Link>
+					</li>
 				</ul>
-			</>
+			</section>
 		);
 	} else {
 		return <NotFound />;

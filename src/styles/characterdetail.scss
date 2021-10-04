@@ -1,15 +1,32 @@
+@import 'variables.scss';
+.characterDetail {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	text-align: center;
+}
+.listDetail {
+	@include cardFlex;
+}
 .img__detail {
 	width: 100px;
 	height: 100px;
 }
 
-
 .icon {
 	width: 20px;
 	height: 20px;
 }
-.characterDetail {
-	border: solid black 2px;
-	width: 170px;
+
+.btn__back {
+	font-family: $font-main;
+	font-size: 20px;
+	color: $blue-color;
+	background-color: $green-light;
+	border: 2px solid $green-dark;
+	margin-top: 10px;
 	height: fit-content;
+	border-radius: 10px;
+	width: fit-content;
+	align-content: flex-end;
 }
