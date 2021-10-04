@@ -2,6 +2,7 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 }
+
 img {
 	width: 100px;
 	height: 100px;
@@ -9,6 +10,8 @@ img {
 article {
 	margin: 10px;
 	border: solid black 2px;
+	width: 170px;
+	height: 170px;
 }
 .header {
 	display: flex;
@@ -23,4 +26,9 @@ article {
 .icon {
 	width: 20px;
 	height: 20px;
+}
+.characterDetail {
+	border: solid black 2px;
+	width: 170px;
+	height: fit-content;
 }

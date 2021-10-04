@@ -4,7 +4,7 @@ const CharacterList = (props) => {
 	console.log('character list', props);
 	console.log('searchname', props.input);
 
-	const html = props.data.map((characterData, index) => (
+	const html = props.data.map((characterData) => (
 		<li className="card" key={characterData.id}>
 			<CharacterCard characterData={characterData} />
 		</li>

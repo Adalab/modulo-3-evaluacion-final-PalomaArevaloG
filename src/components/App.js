@@ -9,7 +9,7 @@ import logo from '../images/RickMortyLogo.png';
 import FilterByName from './FilterByName';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
-
+import NotFound from './NotFound';
 const App = () => {
 	const [data, setData] = useState([]);
 	const [searchName, setSearchName] = useState('');
@@ -62,7 +62,7 @@ const App = () => {
 					<CharacterDetail character={selectedCharacter} />
 				</Route>
 				<Route>
-					<section>"El personaje que buscas no existe".</section>
+					<NotFound />
 				</Route>
 			</Switch>
 		</>
