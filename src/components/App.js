@@ -3,9 +3,10 @@
 import { useEffect, useState } from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import '../styles/reset.scss';
+import '../styles/variables.scss';
 import '../styles/App.scss';
 import api from '../services/callToApi';
-import logo from '../images/RickMortyLogo.png';
+import Header from './Header';
 import FilterByName from './FilterByName';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
@@ -36,15 +37,8 @@ const App = () => {
 		(character) => character.id === parseInt(characterId)
 	);
 	return (
-		<>
-			<header className="header">
-				<img
-					className="header_img"
-					src={logo}
-					title="Rick y Morty"
-					alt="Rick y Morty"
-				/>
-			</header>
+		<div className="App">
+			<Header />
 			<Switch>
 				<Route exact path="/">
 					<main>
@@ -65,7 +59,7 @@ const App = () => {
 					<NotFound />
 				</Route>
 			</Switch>
-		</>
+		</div>
 	);
 };
 

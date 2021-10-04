@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import alive from '../images/alive.png';
 import dead from '../images/dead.png';
 import NotFound from './NotFound';
+import '../styles/characterdetail.scss';
+import '../styles/variables.scss';
 const CharacterDetail = (props) => {
 	// console.log('detail', props);
 	if (props.character !== undefined) {
@@ -14,6 +16,7 @@ const CharacterDetail = (props) => {
 				<ul className="characterDetail">
 					<li>
 						<img
+							className="img__detail"
 							src={props.character.image}
 							alt={props.character.name}
 						/>

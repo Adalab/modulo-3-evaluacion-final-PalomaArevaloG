@@ -1,34 +1,6 @@
-.characterList {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-}
-
-img {
-	width: 100px;
-	height: 100px;
-}
-article {
-	margin: 10px;
-	border: solid black 2px;
-	width: 170px;
-	height: 170px;
-}
-.header {
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	flex-wrap: wrap;
-}
-.header_img {
-	width: 300px;
-	height: 100px;
-}
-.icon {
-	width: 20px;
-	height: 20px;
-}
-.characterDetail {
-	border: solid black 2px;
-	width: 170px;
-	height: fit-content;
-}
+/* .body {
+	width: 100vw;
+	height: 100vh;
+	background: black;
+	color: whitesmoke;
+} */

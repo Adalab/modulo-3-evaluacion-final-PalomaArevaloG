@@ -1,0 +1,12 @@
+.list {
+	&__name {
+		text-decoration: none;
+	}
+	&__text {
+		text-decoration: none;
+	}
+}
+.characterList {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}

@@ -1,11 +1,13 @@
 import CharacterCard from './CharacterCard';
+import '../styles/characterlist.scss';
 
+import '../styles/variables.scss';
 const CharacterList = (props) => {
 	console.log('character list', props);
 	console.log('searchname', props.input);
 
 	const html = props.data.map((characterData) => (
-		<li className="card" key={characterData.id}>
+		<li className="list" key={characterData.id}>
 			<CharacterCard characterData={characterData} />
 		</li>
 	));
