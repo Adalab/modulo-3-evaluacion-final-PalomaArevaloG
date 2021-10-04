@@ -1,3 +1,4 @@
+@import 'variables.scss';
 .list {
 	&__name {
 		text-decoration: none;
@@ -9,8 +10,14 @@
 .characterList {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+
 	@media (min-width: 768px) {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 	}
+}
+.msg-error {
+	color: $green-light;
+	font-family: $font-main;
+	margin: 10px;
 }

@@ -1,10 +1,18 @@
 import { Link } from 'react-router-dom';
-import alive from '../images/alive.png';
-import dead from '../images/dead.png';
+
 import NotFound from './NotFound';
 import '../styles/characterdetail.scss';
 import '../styles/variables.scss';
 const CharacterDetail = (props) => {
+	const iconStatus = () => {
+		if (props.character.status === 'Dead') {
+			return <i className="fas fa-skull"></i>;
+		} else if (props.character.status === 'Alive') {
+			return <i className="fas  fa-heartbeat"></i>;
+		} else {
+			return <i class="fas fa-question-circle"></i>;
+		}
+	};
 	// console.log('detail', props);
 	if (props.character !== undefined) {
 		return (
@@ -24,24 +32,7 @@ const CharacterDetail = (props) => {
 						Número de episodios en los que aparece:
 						{props.character.episodes}
 					</li>
-					<li>
-						¿Está vivo?{' '}
-						{props.character.status === 'Alive' ? (
-							<img
-								className="alive_img icon"
-								src={alive}
-								title="alive"
-								alt="alive"
-							/>
-						) : (
-							<img
-								className="dead_img icon"
-								src={dead}
-								title="dead"
-								alt="dead"
-							/>
-						)}
-					</li>
+					<li>¿Está vivo?: {iconStatus()}</li>
 					<li>
 						<Link to="/">
 							<button className="btn__back">Volver atrás</button>

@@ -12,7 +12,7 @@ const FilterByName = (props) => {
 				type="text"
 				name="name"
 				id="name"
-				placeholder="Introduce un personaje"
+				placeholder="Ej: Morty"
 				value={props.searchName}
 				onChange={props.handleSearchName}
 			/>

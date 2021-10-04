@@ -1,12 +1,20 @@
 import { Link } from 'react-router-dom';
 import '../styles/notfound.scss';
 import '../styles/variables.scss';
+import notfound from '../images/notfound.png';
 const NotFound = () => {
 	return (
 		<>
-			<p className="notFoundPage">Página no encontrada.</p>
 			<Link to="/">
-				<p>Recargamos página</p>
+				<p className="msg-error">
+					Página no encontrada. Pulsa el portal para volver
+				</p>
+				<img
+					className="img-error"
+					src={notfound}
+					title="Volver"
+					alt="Volver"
+				/>
 			</Link>
 		</>
 	);

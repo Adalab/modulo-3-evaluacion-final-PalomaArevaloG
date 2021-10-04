@@ -17,7 +17,7 @@ const CharacterList = (props) => {
 				<ul className="characterList">{html}</ul>
 			) : (
 				<>
-					<p>{`No hay ningún personaje que coincida con la palabra ${props.searchName}`}</p>
+					<p className="msg-error">{`No hay ningún personaje que coincida con la palabra ${props.searchName}`}</p>
 				</>
 			)}
 		</>
