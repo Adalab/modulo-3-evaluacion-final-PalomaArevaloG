@@ -52,7 +52,10 @@ const App = () => {
 							searchName={searchName}
 							handleSearchName={handleSearchName}
 						/>
-						<CharacterList data={filteredData} />
+						<CharacterList
+							data={filteredData}
+							searchName={searchName}
+						/>
 					</main>
 				</Route>
 				<Route path="/character/:id">
