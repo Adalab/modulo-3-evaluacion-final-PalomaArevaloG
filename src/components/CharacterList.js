@@ -1,5 +1,5 @@
 import CharacterCard from './CharacterCard';
-import { Link } from 'react-router-dom';
+
 const CharacterList = (props) => {
 	console.log('character list', props);
 	console.log('searchname', props.input);
@@ -16,9 +16,6 @@ const CharacterList = (props) => {
 			) : (
 				<>
 					<p>{`No hay ningún personaje que coincida con la palabra ${props.searchName}`}</p>
-					{/* <Link to="/">
-						<p>Volver atrás</p>
-					</Link> */}
 				</>
 			)}
 		</>

@@ -20,7 +20,7 @@ const App = () => {
 			console.log(initialData);
 			setData(initialData);
 		});
-	}, [searchName]);
+	}, []);
 	//filtro por nombre
 	const handleSearchName = (ev) => {
 		setSearchName(ev.currentTarget.value);
