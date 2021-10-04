@@ -3,13 +3,14 @@
 import { useEffect, useState } from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import '../styles/reset.scss';
+import '../styles/variables.scss';
 import '../styles/App.scss';
 import api from '../services/callToApi';
-import logo from '../images/RickMortyLogo.png';
+import Header from './Header';
 import FilterByName from './FilterByName';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
-
+import NotFound from './NotFound';
 const App = () => {
 	const [data, setData] = useState([]);
 	const [searchName, setSearchName] = useState('');
@@ -20,7 +21,7 @@ const App = () => {
 			console.log(initialData);
 			setData(initialData);
 		});
-	}, [searchName]);
+	}, []);
 	//filtro por nombre
 	const handleSearchName = (ev) => {
 		setSearchName(ev.currentTarget.value);
@@ -36,15 +37,8 @@ const App = () => {
 		(character) => character.id === parseInt(characterId)
 	);
 	return (
-		<>
-			<header className="header">
-				<img
-					className="header_img"
-					src={logo}
-					title="Rick y Morty"
-					alt="Rick y Morty"
-				/>
-			</header>
+		<div className="App">
+			<Header />
 			<Switch>
 				<Route exact path="/">
 					<main>
@@ -62,10 +56,10 @@ const App = () => {
 					<CharacterDetail character={selectedCharacter} />
 				</Route>
 				<Route>
-					<section>"El personaje que buscas no existe".</section>
+					<NotFound />
 				</Route>
 			</Switch>
-		</>
+		</div>
 	);
 };
 

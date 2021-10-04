@@ -1,0 +1,13 @@
+@import 'variables.scss';
+.listcard {
+	@include cardFlex;
+
+	&__img {
+		width: 100px;
+		height: 100px;
+	}
+	&__name {
+	}
+	&__text {
+	}
+}

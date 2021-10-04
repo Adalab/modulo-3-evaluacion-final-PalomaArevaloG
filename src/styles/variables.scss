@@ -1,0 +1,19 @@
+$font-main: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+	'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+$blue-color: #00afc7;
+$green-light: #88bf3f;
+$green-dark: #10843d;
+
+@mixin cardFlex {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: space-evenly;
+	margin: 20px;
+	padding: 20px;
+	border: solid $green-dark 2px;
+	border-radius: 20px;
+	color: $green-light;
+	font-family: $font-main;
+}

@@ -1,11 +1,13 @@
 import CharacterCard from './CharacterCard';
+import '../styles/characterlist.scss';
 
+import '../styles/variables.scss';
 const CharacterList = (props) => {
 	console.log('character list', props);
 	console.log('searchname', props.input);
 
-	const html = props.data.map((characterData, index) => (
-		<li className="card" key={characterData.id}>
+	const html = props.data.map((characterData) => (
+		<li className="list" key={characterData.id}>
 			<CharacterCard characterData={characterData} />
 		</li>
 	));
@@ -14,7 +16,9 @@ const CharacterList = (props) => {
 			{props.data.length !== 0 ? (
 				<ul className="characterList">{html}</ul>
 			) : (
-				<p>{`No hay ningún personaje que coincida con la palabra ${props.searchName}`}</p>
+				<>
+					<p>{`No hay ningún personaje que coincida con la palabra ${props.searchName}`}</p>
+				</>
 			)}
 		</>
 	);

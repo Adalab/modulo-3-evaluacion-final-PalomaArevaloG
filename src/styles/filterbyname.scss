@@ -1,0 +1,20 @@
+@import 'variables.scss';
+.form {
+	padding: 10px;
+
+	&__header {
+		margin-bottom: 10px;
+		color: whitesmoke;
+		font-family: $font-main;
+		font-size: 20px;
+	}
+	&__input {
+		width: 50%;
+		height: 25px;
+		border: solid $green-light 2px;
+		background: black;
+		color: $green-dark;
+		font-size: 20px;
+		box-sizing: content-box;
+	}
+}
