@@ -17,9 +17,11 @@ const App = () => {
 
 	useEffect(() => {
 		//pinto listado
-		api(searchName).then((initialData) => {
-			console.log(initialData);
-			setData(initialData);
+		api(searchName).then((data) => {
+			const orderedData = data.sort((a, b) =>
+				a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+			);
+			setData(orderedData);
 		});
 	}, []);
 	//filtro por nombre
@@ -31,6 +33,7 @@ const App = () => {
 			.toLocaleLowerCase()
 			.includes(searchName.toLocaleLowerCase())
 	);
+	console.log(filteredData);
 	const routeData = useRouteMatch('/character/:id');
 	const characterId = routeData !== null ? routeData.params.id : '';
 	const selectedCharacter = data.find(
