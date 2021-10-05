@@ -1,12 +1,11 @@
 import '../styles/filterbyname.scss';
 
 const FilterByName = (props) => {
-	const handleFormSubmit = (ev) => {
-		ev.preventDefault();
-	};
 	return (
-		<form className="form" onSubmit={handleFormSubmit}>
-			<h1 className="form__header">Buscador de personajes:</h1>
+		<>
+			<label className="form__header" htmlFor="name">
+				Buscador de personajes:
+			</label>
 			<input
 				className="form__input"
 				type="text"
@@ -16,7 +15,7 @@ const FilterByName = (props) => {
 				value={props.searchName}
 				onChange={props.handleSearchName}
 			/>
-		</form>
+		</>
 	);
 };
 export default FilterByName;
