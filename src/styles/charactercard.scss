@@ -1,9 +1,16 @@
 @import 'variables.scss';
 .listcard {
 	@include cardFlex;
+	height: 50vh;
 
 	&__img {
 		width: 100px;
 		height: 100px;
+	}
+	&:hover {
+		border: solid 3px $blue-color;
+		font-weight: bold;
+		color: $blue-color;
+		box-shadow: 0 5px 15px $green-dark;
 	}
 }

@@ -4,7 +4,7 @@
 	text-align: center;
 
 	&__header {
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 		color: $green-light;
 		font-family: $font-main;
 		font-size: 20px;
@@ -18,5 +18,17 @@
 		color: $green-light;
 		font-size: 20px;
 		box-sizing: content-box;
+		&:hover {
+			border: solid 3px $blue-color;
+			font-weight: bold;
+			color: $blue-color;
+			box-shadow: 0 5px 15px $green-dark;
+		}
+		&:not(:placeholder-shown) {
+			border: solid 3px $green-dark;
+			font-weight: bold;
+			color: $blue-color;
+			box-shadow: 0px 0px 50px 20px $green-dark;
+		}
 	}
 }

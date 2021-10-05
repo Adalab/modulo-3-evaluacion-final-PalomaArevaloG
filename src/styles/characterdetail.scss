@@ -8,6 +8,15 @@
 .listDetail {
 	@include cardFlex;
 	margin: 10px 75px 75px 75px;
+	&__name {
+		font-weight: bold;
+	}
+	&:hover {
+		border: solid 3px $blue-color;
+		font-weight: bold;
+		color: $blue-color;
+		box-shadow: 0 5px 15px $green-dark;
+	}
 }
 .img__detail {
 	width: 100px;
@@ -29,4 +38,11 @@
 	border-radius: 10px;
 	width: fit-content;
 	align-content: flex-end;
+	&:hover {
+		border: solid 3px $blue-color;
+		font-weight: bold;
+		color: $green-dark;
+		background-color: $blue-color;
+		box-shadow: 0 5px 15px $green-dark;
+	}
 }

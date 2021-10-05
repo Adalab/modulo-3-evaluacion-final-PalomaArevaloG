@@ -26,18 +26,30 @@ const CharacterDetail = (props) => {
 						/>
 					</li>
 					<li>
-						<strong>Nombre:</strong> {props.character.name}
+						<strong className="listDetail__name">Nombre:</strong>{' '}
+						{props.character.name}
 					</li>
 					<li>
-						<strong>Especie:</strong> {props.character.specie}
+						<strong className="listDetail__name">Especie:</strong>{' '}
+						{props.character.specie}
 					</li>
-					<li>Planeta de origen: {props.character.planet}</li>
 					<li>
-						<strong>Número de episodios en los que aparece:</strong>
+						<strong className="listDetail__name">
+							Planeta de origen:{' '}
+						</strong>
+						{props.character.planet}
+					</li>
+					<li>
+						<strong className="listDetail__name">
+							Número de episodios en los que aparece:{' '}
+						</strong>
 						{props.character.episodes}
 					</li>
 					<li>
-						<strong>¿Está vivo?: </strong> {iconStatus()}
+						<strong className="listDetail__name">
+							¿Está vivo?:{' '}
+						</strong>
+						{iconStatus()}
 					</li>
 					<li>
 						<Link to="/">
