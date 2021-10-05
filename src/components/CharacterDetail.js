@@ -13,7 +13,7 @@ const CharacterDetail = (props) => {
 			return <i class="fas fa-question-circle"></i>;
 		}
 	};
-	// console.log('detail', props);
+
 	if (props.character !== undefined) {
 		return (
 			<section className="characterDetail">

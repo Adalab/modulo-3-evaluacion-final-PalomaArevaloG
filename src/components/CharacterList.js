@@ -3,9 +3,6 @@ import '../styles/characterlist.scss';
 
 import '../styles/variables.scss';
 const CharacterList = (props) => {
-	console.log('character list', props);
-	console.log('searchname', props.input);
-
 	const html = props.data.map((characterData) => (
 		<li className="list" key={characterData.id}>
 			<CharacterCard characterData={characterData} />
@@ -17,7 +14,7 @@ const CharacterList = (props) => {
 				<ul className="characterList">{html}</ul>
 			) : (
 				<>
-					<p className="msg-error">{`No hay ningún personaje que coincida con la palabra ${props.searchName}`}</p>
+					<p className="msg-error">{`No hay ningún personaje que coincida con la palabra ${props.searchName}. Refresca la página`}</p>
 				</>
 			)}
 		</>

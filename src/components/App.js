@@ -33,7 +33,7 @@ const App = () => {
 			.toLocaleLowerCase()
 			.includes(searchName.toLocaleLowerCase())
 	);
-	console.log(filteredData);
+
 	const routeData = useRouteMatch('/character/:id');
 	const characterId = routeData !== null ? routeData.params.id : '';
 	const selectedCharacter = data.find(
@@ -49,7 +49,10 @@ const App = () => {
 							searchName={searchName}
 							handleSearchName={handleSearchName}
 						/>
-						<CharacterList data={filteredData} />
+						<CharacterList
+							data={filteredData}
+							searchName={searchName}
+						/>
 					</main>
 				</Route>
 				<Route path="/character/:id">

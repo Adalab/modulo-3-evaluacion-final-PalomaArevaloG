@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import '../styles/charactercard.scss';
 import '../styles/variables.scss';
 const CharacterCard = (props) => {
-	console.log('charactercard', props);
 	return (
 		<Link to={`./character/${props.characterData.id}`}>
 			<article className="listcard">

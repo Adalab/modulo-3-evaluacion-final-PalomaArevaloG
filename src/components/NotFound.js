@@ -7,7 +7,8 @@ const NotFound = () => {
 		<>
 			<Link to="/">
 				<p className="msg-error">
-					Página no encontrada. Pulsa el portal para volver
+					El personaje que buscas no existe. Pulsa el portal para
+					volver
 				</p>
 				<img
 					className="img-error"
