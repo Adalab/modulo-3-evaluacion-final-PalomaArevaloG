@@ -49,10 +49,7 @@ const App = () => {
 							searchName={searchName}
 							handleSearchName={handleSearchName}
 						/>
-						<CharacterList
-							data={filteredData}
-							searchName={searchName}
-						/>
+						<CharacterList data={filteredData} />
 					</main>
 				</Route>
 				<Route path="/character/:id">
