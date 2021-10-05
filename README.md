@@ -8,10 +8,10 @@ Se trata de una aplicación web de búsqueda de personajes de la serie Rick y Mo
 
 ## ¿Cómo es?
 
-    Tenemos un header con el título de la página y un main que incluye:
+Tenemos un header con el título de la página y un main que incluye:
 
-    -   Formulario para la búsqueda de personajes
-    -   Sección para listar los personajes por defecto obtenidos mediante la [API Rick and Morty](https://rickandmortyapi.com/documentation/#get-all-characters) maquetada con GRID
+-   Formulario para la búsqueda de personajes
+-   Sección para listar los personajes por defecto obtenidos mediante la API [Rick and Morty Api](https://rickandmortyapi.com/documentation/#get-all-characters) maquetada con GRID con diseño responsive
 
 ## ¿Cómo funciona?
 
