@@ -11,9 +11,11 @@ import FilterByName from './FilterByName';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import NotFound from './NotFound';
+import FilterByStatus from './FilterByStatus';
 const App = () => {
 	const [data, setData] = useState([]);
 	const [searchName, setSearchName] = useState('');
+	const [searchStatus, setSearchStatus] = useState('Alive');
 
 	useEffect(() => {
 		//pinto listado
@@ -23,16 +25,26 @@ const App = () => {
 			);
 			setData(orderedData);
 		});
-	}, []);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [searchName]);
 	//filtro por nombre
 	const handleSearchName = (ev) => {
 		setSearchName(ev.currentTarget.value);
 	};
-	const filteredData = data.filter((character) =>
-		character.name
-			.toLocaleLowerCase()
-			.includes(searchName.toLocaleLowerCase())
-	);
+	const handleSearchStatus = (ev) => {
+		setSearchStatus(ev.currentTarget.value);
+	};
+	const filteredData = data
+		.filter(
+			(character) =>
+				searchStatus === 'alive' || searchStatus === character.status
+		)
+
+		.filter((character) =>
+			character.name
+				.toLocaleLowerCase()
+				.includes(searchName.toLocaleLowerCase())
+		);
 
 	const routeData = useRouteMatch('/character/:id');
 	const characterId = routeData !== null ? routeData.params.id : '';
@@ -48,6 +60,10 @@ const App = () => {
 						<FilterByName
 							searchName={searchName}
 							handleSearchName={handleSearchName}
+						/>
+						<FilterByStatus
+							searchStatus={searchStatus}
+							handleSearchStatus={handleSearchStatus}
 						/>
 						<CharacterList
 							data={filteredData}
