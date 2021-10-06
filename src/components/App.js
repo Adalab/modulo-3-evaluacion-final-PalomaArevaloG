@@ -7,7 +7,7 @@ import '../styles/variables.scss';
 import '../styles/App.scss';
 import api from '../services/callToApi';
 import Header from './Header';
-import Filters from './FilterByName';
+import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 
@@ -65,6 +65,7 @@ const App = () => {
 								handleSearchSpecie={handleSearchSpecie}
 							/>
 						</section>
+
 						<section>
 							<CharacterList
 								data={filteredData}
