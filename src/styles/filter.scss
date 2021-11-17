@@ -1,16 +1,29 @@
 @import 'variables.scss';
 .form {
+	display: flex;
+	flex-direction: column;
 	padding: 10px;
-	text-align: center;
+	align-items: center;
 
 	&__header {
 		margin-bottom: 20px;
+		margin-top: 20px;
 		color: $green-light;
 		font-family: $font-main;
 		font-size: 20px;
 	}
+	&__radio {
+		display: flex;
+		color: $green-light;
+		font-family: $font-main;
+		&-input {
+			&:checked {
+				background: $blue-color;
+				box-shadow: 0px 0px 50px 20px $green-dark;
+			}
+		}
+	}
 	&__input {
-		width: 50%;
 		height: 25px;
 		border: solid $green-dark 2px;
 		border-radius: 10px;

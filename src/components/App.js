@@ -7,13 +7,16 @@ import '../styles/variables.scss';
 import '../styles/App.scss';
 import api from '../services/callToApi';
 import Header from './Header';
-import FilterByName from './FilterByName';
+import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
+
 import NotFound from './NotFound';
 const App = () => {
 	const [data, setData] = useState([]);
 	const [searchName, setSearchName] = useState('');
+	const [searchSpecie, setSearchSpecie] = useState('all');
+	const [searchStatus, setSearchStatus] = useState('all');
 
 	useEffect(() => {
 		//pinto listado
@@ -26,14 +29,31 @@ const App = () => {
 	}, []);
 	//filtro por nombre
 	const handleSearchName = (ev) => {
+		ev.preventDefault();
 		setSearchName(ev.currentTarget.value);
 	};
-	const filteredData = data.filter((character) =>
-		character.name
-			.toLocaleLowerCase()
-			.includes(searchName.toLocaleLowerCase())
-	);
+	const handleSearchSpecie = (ev) => {
+		setSearchSpecie(ev.currentTarget.value);
+	};
+	const handleSearchStatus = (ev) => {
+		setSearchStatus(ev.currentTarget.value);
+	};
+	const filteredData = data
+		.filter((character) =>
+			character.name
+				.toLocaleLowerCase()
+				.includes(searchName.toLocaleLowerCase())
+		)
+		.filter(
+			(character) =>
+				searchSpecie === 'all' || searchSpecie === character.specie
+		)
+		.filter(
+			(character) =>
+				searchStatus === 'all' || searchStatus === character.status
+		);
 
+	console.log(filteredData);
 	const routeData = useRouteMatch('/character/:id');
 	const characterId = routeData !== null ? routeData.params.id : '';
 	const selectedCharacter = data.find(
@@ -45,14 +65,23 @@ const App = () => {
 			<Switch>
 				<Route exact path="/">
 					<main>
-						<FilterByName
-							searchName={searchName}
-							handleSearchName={handleSearchName}
-						/>
-						<CharacterList
-							data={filteredData}
-							searchName={searchName}
-						/>
+						<section>
+							<Filters
+								searchName={searchName}
+								searchSpecie={searchSpecie}
+								searchStatus={searchStatus}
+								handleSearchName={handleSearchName}
+								handleSearchSpecie={handleSearchSpecie}
+								handleSearchStatus={handleSearchStatus}
+							/>
+						</section>
+
+						<section>
+							<CharacterList
+								data={filteredData}
+								searchName={searchName}
+							/>
+						</section>
 					</main>
 				</Route>
 				<Route path="/character/:id">
