@@ -1,23 +1,23 @@
 import '../styles/filter.scss';
 
-const FilterBySpecie = (props) => {
-	console.log('specie', props);
+const FilterByStatus = (props) => {
 	return (
 		<>
-			<label className="form__header" htmlFor="specie">
-				Especie:
+			<label className="form__header" htmlFor="status">
+				Status
 			</label>
 			<select
 				className="form__input"
-				name="specie"
-				id="specie"
-				value={props.searchSpecie}
-				onChange={props.handleSearchSpecie}>
+				name="status"
+				id="status"
+				value={props.searchStatus}
+				onChange={props.handleSearchStatus}>
 				<option value="all">Todos</option>
-				<option value="Human">Human</option>
-				<option value="Alien">Alien</option>
+				<option value="Alive">Alive</option>
+				<option value="Dead">Dead</option>
+				<option value="unknown">Unknown</option>
 			</select>
 		</>
 	);
 };
-export default FilterBySpecie;
+export default FilterByStatus;

@@ -16,6 +16,7 @@ const App = () => {
 	const [data, setData] = useState([]);
 	const [searchName, setSearchName] = useState('');
 	const [searchSpecie, setSearchSpecie] = useState('all');
+	const [searchStatus, setSearchStatus] = useState('all');
 
 	useEffect(() => {
 		//pinto listado
@@ -34,6 +35,9 @@ const App = () => {
 	const handleSearchSpecie = (ev) => {
 		setSearchSpecie(ev.currentTarget.value);
 	};
+	const handleSearchStatus = (ev) => {
+		setSearchStatus(ev.currentTarget.value);
+	};
 	const filteredData = data
 		.filter((character) =>
 			character.name
@@ -43,6 +47,10 @@ const App = () => {
 		.filter(
 			(character) =>
 				searchSpecie === 'all' || searchSpecie === character.specie
+		)
+		.filter(
+			(character) =>
+				searchStatus === 'all' || searchStatus === character.status
 		);
 
 	console.log(filteredData);
@@ -61,8 +69,10 @@ const App = () => {
 							<Filters
 								searchName={searchName}
 								searchSpecie={searchSpecie}
+								searchStatus={searchStatus}
 								handleSearchName={handleSearchName}
 								handleSearchSpecie={handleSearchSpecie}
+								handleSearchStatus={handleSearchStatus}
 							/>
 						</section>
 

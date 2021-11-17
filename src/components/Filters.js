@@ -1,10 +1,10 @@
 import FilterByName from './FilterByName';
 import FilterBySpecie from './FilterBySpecie';
-
+import FilterByStatus from './FilterByStatus';
 const Filters = (props) => {
-    	const handleFormSubmit = (ev) => {
-			ev.preventDefault();
-		};
+	const handleFormSubmit = (ev) => {
+		ev.preventDefault();
+	};
 	return (
 		<form className="form" onSubmit={handleFormSubmit}>
 			<FilterByName
@@ -14,6 +14,10 @@ const Filters = (props) => {
 			<FilterBySpecie
 				searchSpecie={props.searchSpecie}
 				handleSearchSpecie={props.handleSearchSpecie}
+			/>
+			<FilterByStatus
+				searchStatus={props.searchStatus}
+				handleSearchStatus={props.handleSearchStatus}
 			/>
 		</form>
 	);
