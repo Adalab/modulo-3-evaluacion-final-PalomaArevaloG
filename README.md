@@ -25,7 +25,7 @@ En el campo de texto podemos escribir el personaje buscado. Mientras escribimos 
 
 **Detalle de personajes**
 
-Si queremos más información sobre algún personaje podemos pinchar en la tarjeta y nos llevará auna página en la que se nos darán más datos sobre el mismo y un botón con la posibilidad de volver al inicio
+Si queremos más información sobre algún personaje podemos pinchar en la tarjeta y nos llevará a una página en la que se nos darán más datos sobre el mismo y un botón con la posibilidad de volver al inicio
 
 **Página no encontrada**
 
@@ -54,3 +54,8 @@ He podido aplicar el temario del curso con las siguientes tecnologías:
 2. Abre una terminal en la carpeta Master.
 3. Instala dependencias locales con `npm install`
 4. Arranca el proyecto con `npm start`
+
+## Próximas actualizaciones
+- Filtro por Especie
+- Filtro por Status
+- Paginación
