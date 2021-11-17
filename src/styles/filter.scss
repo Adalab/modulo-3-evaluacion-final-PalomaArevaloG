@@ -12,6 +12,17 @@
 		font-family: $font-main;
 		font-size: 20px;
 	}
+	&__radio {
+		display: flex;
+		color: $green-light;
+		font-family: $font-main;
+		&-input {
+			&:checked {
+				background: $blue-color;
+				box-shadow: 0px 0px 50px 20px $green-dark;
+			}
+		}
+	}
 	&__input {
 		height: 25px;
 		border: solid $green-dark 2px;
