@@ -56,6 +56,5 @@ He podido aplicar el temario del curso con las siguientes tecnologías:
 4. Arranca el proyecto con `npm start`
 
 ## Próximas actualizaciones
-- Filtro por Especie
-- Filtro por Status
+
 - Paginación
